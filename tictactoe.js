@@ -48,12 +48,13 @@ function handleClick(ind) {
     cells[ind].innerHTML = player;
     turnCounter++;
 
-    if (turnCounter > 8) {
-        label.innerHTML = "It's a draw!";
-    }
-    else if (checkWin(player)) {
+
+    if (checkWin(player)) {
         label.innerHTML = `The winner is ${player}s!`;
         win = true;
+    }
+    else if (turnCounter > 8) {
+        label.innerHTML = "It's a draw!";
     }
     else {
         if (player == "X") player = "O";
